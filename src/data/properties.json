@@ -1,0 +1,73 @@
+[
+  {
+    "id": 1,
+    "sellRent": 1,
+    "name": "Adekoya Mansion",
+    "type": "House",
+    "price": 12000,
+    "image": "prop-1.webp"
+  },
+  {
+    "id": 2,
+    "sellRent": 1,
+    "name": "Lawal Mansion",
+    "type": "House",
+    "price": 13000,
+    "image": "prop-2.webp"
+  },
+  {
+    "id": 3,
+    "sellRent": 1,
+    "name": "Unleko Mansion",
+    "type": "House",
+    "price": 14000,
+    "image": "prop-3.webp"
+  },
+  {
+    "id": 4,
+    "sellRent": 1,
+    "name": "Deleso Mansion",
+    "type": "House",
+    "price": 15000,
+    "image": "prop-4.webp"
+  },
+  {
+    "id": 5,
+    "sellRent": 1,
+    "name": "David Mansion",
+    "type": "House",
+    "price": 12000,
+    "image": "prop-5.webp"
+  },
+  {
+    "id": 6,
+    "sellRent": 1,
+    "name": "Manuel Mansion",
+    "type": "House",
+    "price": 13000,
+    "image": "prop-6.webp"
+  },
+  {
+    "id": 7,
+    "sellRent": 2,
+    "name": "Grace Mansion",
+    "type": "House",
+    "price": 14000,
+    "image": "prop-7.webp"
+  },
+  {
+    "id": 8,
+    "sellRent": 2,
+    "name": "Julius Mansion",
+    "type": "House",
+    "price": 15000,
+    "image": "prop-8.webp"
+  },
+  {
+    "id": 9,
+    "sellRent": 1,
+    "name": "Test Mansion",
+    "type": "House",
+    "price": 16000
+  }
+]

@@ -1,0 +1,67 @@
+<div class="card col-12">
+  <div class="card-header">List your Property</div>
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #form="ngForm">
+      <div>
+        <tabset>
+          <tab heading="Basic Info">
+            <div class="form-group col-12 mb-2">
+              <label for="name">Name</label>
+              <input
+                type="text"
+                class="form-control"
+                #name="ngModel"
+                ngModel
+                name="name"
+                required
+                minlength="5"
+              />
+              <span *ngIf="!name.valid && name.touched" class="error-block">
+                <span *ngIf="name.hasError('required')"
+                  >Please provide name</span
+                >
+                <span *ngIf="name.hasError('minlength')"
+                  >Name can not be less than 5 characters</span
+                >
+              </span>
+            </div>
+            <div class="form-group col-12 mb-2">
+              <label for="type">Type</label>
+              <input
+                type="text"
+                class="form-control"
+                ngModel
+                name="type"
+                required
+              />
+            </div>
+            <div class="form-group col-12 mb-2">
+              <label for="price">Price</label>
+              <input
+                type="text"
+                class="form-control"
+                ngModel
+                name="price"
+                required
+              />
+            </div>
+            <div class="form-group col-12 mb-2">
+              <button
+                [disabled]="!form.valid"
+                type="submit"
+                class="btn btn-primary m-2"
+              >
+                Save
+              </button>
+              <button type="reset" class="btn btn-primary">Cancel</button>
+            </div>
+          </tab>
+          <tab heading="Pricing and Area">Pricing Information</tab>
+          <tab heading="Address">Address</tab>
+          <tab heading="Other Details">Other Details</tab>
+          <tab heading="Photos">Upload photos</tab>
+        </tabset>
+      </div>
+    </form>
+  </div>
+</div>

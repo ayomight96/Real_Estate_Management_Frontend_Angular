@@ -1,13 +1,20 @@
-<div class="row">
-  <div class="shadow-lg col-sm-4 p-3">
-    <div class="card">
-      <!-- string interpolation -->
-      <img class="property_image" src="assets/images/house_default.png" />
-      <div class="card-body p-2">
-        <h1>{{ Property.name }}</h1>
-        <h2>{{ Property.type }}</h2>
-        <h3>{{ Property.price }}</h3>
-      </div>
-    </div>
+<div class="card">
+  <!-- string interpolation -->
+  <div class="card-img-wrapper">
+    <img *ngIf="data.image" class="card-img-top" src="assets/images/{{data.image}}" />
+    <img *ngIf="!data.image" class="card-img-top" src="assets/images/house_default.png" />
+    <ul class="list-inline text-center member-icons animate">
+      <li class="list-inline-item">
+        <button class="btn btn-primary" routerLink="/property-details/{{data.id}}"><i class="fa-regular fa-pen-to-square"></i></button>
+      </li>
+      <li class="list-inline-item">
+        <button class="btn btn-primary"><i class="fa-regular fa-address-book"></i></button>
+      </li>
+    </ul>
+  </div>
+  <div class="card-body p-2">
+    <h1>{{ data.name }}</h1>
+    <h2>{{ data.type }}</h2>
+    <h3>{{ data.price }}</h3>
   </div>
 </div>
