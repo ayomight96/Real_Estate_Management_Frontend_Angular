@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { Routes, RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 
 import { AppComponent } from './app.component';
 import { PropertyCardComponent } from './property/property-card/property-card.component';
@@ -20,12 +21,21 @@ import { AuthService } from './service/auth.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { PropertyDetailResolverService } from './property/property-details/property-detail-resolver.service';
+import { FilterPipe } from './pipe/filter.pipe';
+import { SortPipe } from './pipe/sort.pipe';
 
 const appRoutes: Routes = [
   { path: '', component: PropertyListComponent },
   { path: 'rent-property', component: PropertyListComponent },
   { path: 'add-property', component: AddPropertyComponent },
-  { path: 'property-details/:id', component: PropertyDetailsComponent },
+  {
+    path: 'property-details/:id',
+    component: PropertyDetailsComponent,
+    resolve: { prp: PropertyDetailResolverService },
+  },
   { path: 'user/login', component: UserLoginComponent },
   { path: 'user/register', component: UserRegisterComponent },
   {
@@ -45,6 +55,8 @@ const appRoutes: Routes = [
     PropertyDetailsComponent,
     UserLoginComponent,
     UserRegisterComponent,
+    FilterPipe,
+    SortPipe,
   ],
   imports: [
     BrowserModule,
@@ -58,8 +70,17 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
+    ButtonsModule.forRoot(),
+    BsDatepickerModule.forRoot(),
+    NgxGalleryModule,
   ],
-  providers: [HousingService, UserServiceService, AlertifyService, AuthService],
+  providers: [
+    HousingService,
+    UserServiceService,
+    AlertifyService,
+    AuthService,
+    PropertyDetailResolverService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
